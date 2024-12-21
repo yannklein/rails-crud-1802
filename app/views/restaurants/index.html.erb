@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="my-5">Le Wagon Taberogu 🧑‍🍳</h1>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-12 col-sm-6 col-lg-4 mb-3">
+        <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= restaurant.name %></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary"><%= "⭐️" * restaurant.rating %></h6>
+          <p class="card-text">📍 <%= restaurant.address %></p>
+          <%= link_to "More details...", restaurant_path(restaurant) %>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="my-5"><%= @restaurant.name %></h1>
+  <div class="row">
+      <div class="col-12 col-sm-6 col-lg-4 mb-3">
+        <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= @restaurant.name %></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary"><%= "⭐️" * @restaurant.rating %></h6>
+          <p class="card-text">📍 <%= @restaurant.address %></p>        </div>
+        </div>
+      </div>
+  </div>
+  <%= link_to "Back", restaurants_path  %>
+  <%= link_to "Remove this restaurant", 
+    restaurant_path(@restaurant), 
+    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }  %>
+</div>
